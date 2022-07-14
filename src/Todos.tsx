@@ -18,6 +18,7 @@ export const Todos: React.FC = () => {
     fetchTodos()
       .then(setTodos);
   }, []);
+
   return (
     <ul>
       {todos.map(todo => (
