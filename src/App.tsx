@@ -1,6 +1,7 @@
 import { FC } from 'react';
 import { Link, Route, Routes, Outlet, NavLink } from 'react-router-dom';
 import './App.scss';
+import { Todos } from './Todos';
 
 const TodosNavigation: FC = () => (
   <div>
@@ -45,7 +46,8 @@ function App() {
 
         <Route path="/todos" element={<TodosNavigation />}>
           <Route index element={<h1>TODOs home page</h1>}/>
-          <Route path="all" element={<p>All TODOs</p>}/>
+          <Route path="all/" element={<Todos />} />
+          <Route path="all/:todoId" element={<Todos />} />
           <Route path="active" element={<p>Active TODOs</p>}/>
           <Route path="completed" element={<p>Completed TODOs</p>}/>
         </Route>
