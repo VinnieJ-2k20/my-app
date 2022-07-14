@@ -46,8 +46,9 @@ function App() {
 
         <Route path="/todos" element={<TodosNavigation />}>
           <Route index element={<h1>TODOs home page</h1>}/>
-          <Route path="all/" element={<Todos />} />
-          <Route path="all/:todoId" element={<Todos />} />
+          <Route path="all" element={<Todos />}>
+            <Route path=":todoId" element={<Todos />} />
+          </Route>
           <Route path="active" element={<p>Active TODOs</p>}/>
           <Route path="completed" element={<p>Completed TODOs</p>}/>
         </Route>
